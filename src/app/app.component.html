@@ -1,0 +1,94 @@
+<div style="float:right">
+  <fa-icon style="color:green" [icon]="faSquare"></fa-icon
+  ><span class="iconHeading">Available</span>
+  <fa-icon style="color:#3d81c7" [icon]="faSquare"></fa-icon
+  ><span class="iconHeading">Booked</span>
+  <fa-icon style="color:orange" [icon]="faSquare"></fa-icon
+  ><span class="iconHeading">Vacation</span>
+  <fa-icon style="color:brown" [icon]="faSquare"></fa-icon
+  ><span class="iconHeading">Haven't Indicated</span>
+  <fa-icon style="color:red" [icon]="faSquare"></fa-icon
+  ><span class="iconHeading">Unavailable</span>
+</div>
+
+<div style="display:inline-block; width:100%;">
+  <div style="width:50%; float:left">
+    <h3>
+      <a style="color:blue">
+        <fa-icon [icon]="faArrowLeft"></fa-icon> Previous Action
+      </a>
+    </h3>
+  </div>
+  <div style="width:50%; float:right">
+    <h3 style="float:right">
+      <a style="color:blue">
+        Next Action <fa-icon [icon]="faArrowRight"></fa-icon>
+      </a>
+    </h3>
+  </div>
+</div>
+
+<div>
+  <label>Search:</label>
+  <input type="text" (keyup)="onsearch($event)" />
+</div>
+<div class="container">
+  <div class="leftContent">
+    Show Details (subject and tags)
+  </div>
+
+  <div class="dateColumn" *ngFor="let items of datelist">
+    <div class="datecontent">{{items.day}}</div>
+    <div class="datecontent">{{items.date}}</div>
+    <div class="datecontent">{{items.month}}</div>
+  </div>
+</div>
+<div class="profileData">
+  <div *ngFor="let profileData of profile; let i=index">
+    <div class="profileContent">{{profileData.name}}</div>
+    <div class="profileContent">
+      <input type="checkbox" />{{profileData.check}}
+    </div>
+    <div class="profileContent"><a>{{profileData.note}}</a></div>
+    <div
+      class="profileContent profilecalendar"
+      *ngFor="let calendarstat of profileData.calendar"
+    >
+      <button
+        class="green"
+        *ngIf="calendarstat=='A'"
+        (click)="handleStatus(i,calendarstat)"
+      >
+        {{calendarstat}}
+      </button>
+      <button
+        class="orange"
+        *ngIf="calendarstat=='V'"
+        (click)="handleStatus(i,calendarstat)"
+      >
+        {{calendarstat}}
+      </button>
+      <button
+        class="red"
+        *ngIf="calendarstat=='UA'"
+        (click)="handleStatus(i,calendarstat)"
+      >
+        {{calendarstat}}
+      </button>
+      <button
+        class="blue"
+        *ngIf="calendarstat=='B'"
+        (click)="handleStatus(i,calendarstat)"
+      >
+        {{calendarstat}}
+      </button>
+      <button
+        class="brown"
+        *ngIf="calendarstat=='HI'"
+        (click)="handleStatus(i,calendarstat)"
+      >
+        {{calendarstat}}
+      </button>
+    </div>
+  </div>
+</div>

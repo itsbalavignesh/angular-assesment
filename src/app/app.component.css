@@ -1,0 +1,67 @@
+div {
+  font-family: Roboto;
+  font-size: 15px;
+  line-height: 2em;
+}
+.iconHeading {
+  padding: 20px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #fff;
+}
+.leftContent {
+  justify-content: flex-start;
+  width: 50%;
+}
+.rightContent {
+  justify-content: flex-end;
+}
+.dateColumn {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  border: none;
+  min-width: 30px;
+  align-items: center;
+  flex-grow: 2;
+}
+.profileData {
+  display: block;
+  width: 100%;
+}
+.profileContent {
+  display: inline-block;
+  width: 16.99%;
+  border-bottom: 1px solid #a6a9ac;
+  height: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.profilecalendar {
+  max-width: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.profilecalendar > button.green {
+  background-color: green;
+  color: yellow;
+}
+.profilecalendar > button.blue {
+  background-color: #3d81c7;
+}
+.profilecalendar > button.red {
+  background-color: red;
+  color: #fff;
+}
+.profilecalendar > button.brown {
+  background-color: brown;
+  color: #fff;
+}
+.profilecalendar > button.orange {
+  background-color: orange;
+}
